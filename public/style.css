@@ -1,0 +1,115 @@
+*{
+    margin:0;
+    font-family: arial;
+    color: black;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+header{
+    background-color: rgb(0,150,250);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top:0;
+    z-index:2;
+    box-shadow: 3px 3px 3px black;
+    padding: 0 10px;
+}
+figure img{
+    width: 60px;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+}
+nav a{
+    color: white;
+}
+.menu-container{
+    display:none;
+}
+/*main*/
+main{
+    display: grid;
+    grid-template-columns: 250px 250px;
+    gap: 15px;
+    justify-content: center;
+    padding: 15px 0;
+}
+.card{
+    height: 300px;
+    width: 250px;
+    background-color: rgb(0,150,250);
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px black;
+    overflow: hidden;
+    display:flex;
+    align-items:center;
+}
+.card img{
+    width: 250px;
+    border-radius: 10px 10px 0 0;
+    transform: scale(1.8);
+}
+footer{
+    background-color: rgb(0,150,250);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-esquerdo-footer, .menu-direito-footer{
+    padding: 0 10px;
+    width: 100px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+figure{
+    display: flex;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+}
+figure p{
+    color: white
+}
+/*responsividade*/
+@media only screen and (max-width:550px){
+    main{
+        grid-template-columns: 250px;
+        grid-template-rows: 300px 300px 300px 300px;
+    }
+    .menu{
+        display:none;
+    }
+    .menu-container{
+        display:block;
+        width: auto;
+    }
+    .menu-container img{
+        width: 60px;
+    }
+    header{
+        justify-content: space-between;
+    }
+    .item-container{
+        overflow: hidden;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top:0;
+        right:0;
+        transition: width 0.5s;
+        display:flex;
+        align-items: center;
+        flex-flow:column;
+        justify-content: space-around;
+        background-color: rgb(0,0,0);
+    }
+    .menu-container:hover .item-container{
+        width: 75%;
+    }
+}
